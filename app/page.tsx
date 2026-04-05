@@ -2,20 +2,14 @@ import { UploadWorkbench } from "@/components/upload-workbench";
 
 export default function HomePage() {
   return (
-    <main className="grain px-4 py-8 md:px-8 md:py-10">
-      <div className="mx-auto max-w-7xl">
-        <section className="mb-8 overflow-hidden rounded-[36px] border border-ink/10 bg-ink px-6 py-10 text-paper shadow-card md:px-10 md:py-14">
-          <div className="max-w-4xl">
-            <p className="text-xs uppercase tracking-[0.35em] text-paper/55">Reverse Outfit Search</p>
-            <h1 className="headline mt-4 text-5xl leading-[0.95] md:text-7xl">
-              Turn a saved outfit into secondhand listings you can actually buy
-            </h1>
-            <p className="mt-5 max-w-2xl text-base text-paper/72 md:text-lg">
-              Dripback breaks outfit inspiration into searchable fashion signals, then ranks live Vinted-style
-              matches by resale relevance instead of generic keyword spam.
-            </p>
-          </div>
-        </section>
+    <main className="grain min-h-[100dvh] bg-canvas text-ink flex flex-col pt-16 pb-32">
+      <div className="mx-auto max-w-7xl px-4 md:px-8 w-full">
+        <header className="mb-12 text-center">
+          <h1 className="headline text-[4rem] md:text-[6rem] font-bold tracking-tight text-ink">dripback</h1>
+          <p className="mt-6 text-lg text-ink/70 font-body max-w-xl mx-auto">
+            Paste a Pinterest link or upload an outfit. Dripback will identify the clothing signals and automatically search Vinted to find the closest matches.
+          </p>
+        </header>
 
         <UploadWorkbench />
       </div>

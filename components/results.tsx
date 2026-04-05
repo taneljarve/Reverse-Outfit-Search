@@ -15,7 +15,7 @@ export function Results({ results }: { results: ItemResult[] }) {
         <section key={item.id} className="panel rounded-[28px] p-6 md:p-8">
           <div className="flex flex-col gap-4 md:flex-row md:items-start md:justify-between">
             <div>
-              <div className="mb-2 inline-flex rounded-full border border-ink/10 bg-white/70 px-3 py-1 text-xs uppercase tracking-[0.25em] text-ink/60">
+              <div className="mb-2 inline-flex rounded-full border border-ink/10 bg-canvas/60 px-3 py-1 text-xs uppercase tracking-[0.25em] text-ink/60">
                 Detected Item
               </div>
               <h3 className="headline text-3xl tracking-tight text-ink">
@@ -38,9 +38,9 @@ export function Results({ results }: { results: ItemResult[] }) {
                 href={listing.link}
                 target="_blank"
                 rel="noreferrer"
-                className="card-rise overflow-hidden rounded-[24px] border border-ink/8 bg-white/80"
+                className="card-rise overflow-hidden rounded-[24px] border border-ink/8 bg-canvas/60"
               >
-                <div className="relative aspect-[4/5] bg-fog">
+                <div className="relative aspect-[4/5] bg-ink/5">
                   {listing.image ? (
                     <Image
                       src={listing.image}

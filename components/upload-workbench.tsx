@@ -116,8 +116,7 @@ export function UploadWorkbench() {
         <div className="panel rounded-[32px] p-6 md:p-8">
           <div className="mb-6 flex items-center justify-between">
             <div>
-              <p className="text-xs uppercase tracking-[0.3em] text-ink/50">Input</p>
-              <h2 className="headline mt-2 text-3xl text-ink">Start with inspiration, not a product page</h2>
+              <h2 className="headline mt-2 text-2xl text-ink font-semibold">Source Image</h2>
             </div>
             <div className="rounded-full border border-ink/10 bg-white/70 px-4 py-2 text-xs uppercase tracking-[0.2em] text-ink/60">
               Pinterest or Upload
@@ -131,7 +130,7 @@ export function UploadWorkbench() {
                 value={pinterestUrl}
                 onChange={(event) => setPinterestUrl(event.target.value)}
                 placeholder="https://www.pinterest.com/pin/... or https://pin.it/..."
-                className="w-full rounded-2xl border border-ink/10 bg-white/80 px-4 py-3 text-base outline-none transition focus:border-accent"
+                className="w-full rounded-2xl border border-ink/10 bg-canvas/60 px-4 py-3 text-base outline-none transition focus:border-accent"
               />
             </label>
             <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
@@ -140,7 +139,7 @@ export function UploadWorkbench() {
                 <select
                   value={filters.size}
                   onChange={(event) => setFilters((current) => ({ ...current, size: event.target.value }))}
-                  className="w-full rounded-2xl border border-ink/10 bg-white/80 px-4 py-3 text-base outline-none transition focus:border-accent"
+                  className="w-full rounded-2xl border border-ink/10 bg-canvas/60 px-4 py-3 text-base outline-none transition focus:border-accent"
                 >
                   {["XS", "S", "M", "L", "XL", "XXL"].map((size) => (
                     <option key={size} value={size}>
@@ -159,7 +158,7 @@ export function UploadWorkbench() {
                       gender: event.target.value as SearchFilters["gender"]
                     }))
                   }
-                  className="w-full rounded-2xl border border-ink/10 bg-white/80 px-4 py-3 text-base outline-none transition focus:border-accent"
+                  className="w-full rounded-2xl border border-ink/10 bg-canvas/60 px-4 py-3 text-base outline-none transition focus:border-accent"
                 >
                   <option value="male">Male</option>
                   <option value="female">Female</option>
@@ -180,7 +179,7 @@ export function UploadWorkbench() {
                     }))
                   }
                   placeholder="No limit"
-                  className="w-full rounded-2xl border border-ink/10 bg-white/80 px-4 py-3 text-base outline-none transition focus:border-accent"
+                  className="w-full rounded-2xl border border-ink/10 bg-canvas/60 px-4 py-3 text-base outline-none transition focus:border-accent"
                 />
               </label>
               <label className="block">
@@ -193,7 +192,7 @@ export function UploadWorkbench() {
                       sortBy: event.target.value as SearchFilters["sortBy"]
                     }))
                   }
-                  className="w-full rounded-2xl border border-ink/10 bg-white/80 px-4 py-3 text-base outline-none transition focus:border-accent"
+                  className="w-full rounded-2xl border border-ink/10 bg-canvas/60 px-4 py-3 text-base outline-none transition focus:border-accent"
                 >
                   <option value="relevance">Best match</option>
                   <option value="price_low_to_high">Price: low to high</option>
@@ -204,7 +203,7 @@ export function UploadWorkbench() {
             <button
               type="submit"
               disabled={isLoading}
-              className="rounded-full bg-ink px-5 py-3 text-sm font-semibold uppercase tracking-[0.2em] text-paper transition hover:bg-accent disabled:cursor-not-allowed disabled:opacity-60"
+              className="rounded-full bg-accent px-5 py-3 text-sm font-semibold uppercase tracking-[0.2em] text-paper transition-transform duration-300 hover:scale-[1.03] disabled:cursor-not-allowed disabled:opacity-60"
             >
               {isLoading ? "Searching..." : "Search Outfit"}
             </button>
@@ -229,8 +228,8 @@ export function UploadWorkbench() {
             onDrop={onDrop}
             className={`flex cursor-pointer flex-col items-center justify-center rounded-[28px] border border-dashed px-6 py-10 text-center transition ${
               isDragging
-                ? "border-accent bg-white/85"
-                : "border-ink/20 bg-white/55 hover:border-accent/50 hover:bg-white/75"
+                ? "border-accent bg-canvas"
+                : "border-ink/20 bg-ink/5 hover:border-accent/50 hover:bg-canvas"
             }`}
           >
             <span className="headline text-2xl text-ink">Drop an outfit screenshot</span>
@@ -248,7 +247,7 @@ export function UploadWorkbench() {
 
         <div className="panel rounded-[32px] p-6 md:p-8">
           <p className="text-xs uppercase tracking-[0.3em] text-ink/50">Preview</p>
-          <div className="mt-4 overflow-hidden rounded-[28px] border border-ink/10 bg-fog">
+          <div className="mt-4 overflow-hidden rounded-[28px] border border-ink/10 bg-ink/5">
             <div className="relative aspect-[4/5]">
               {previewUrl ? (
                 <Image src={previewUrl} alt="Outfit preview" fill className="object-cover" sizes="(max-width: 1280px) 100vw, 40vw" />
@@ -268,13 +267,13 @@ export function UploadWorkbench() {
           </div>
 
           <div className="mt-5 grid gap-3 md:grid-cols-2">
-            <div className="rounded-2xl border border-ink/10 bg-white/70 p-4">
+            <div className="rounded-2xl border border-ink/10 bg-canvas/60 p-4">
               <p className="text-xs uppercase tracking-[0.2em] text-ink/50">Vision</p>
               <p className="mt-2 text-sm text-ink/70">
                 Detects item type, color, style, material, and visible brand signals.
               </p>
             </div>
-            <div className="rounded-2xl border border-ink/10 bg-white/70 p-4">
+            <div className="rounded-2xl border border-ink/10 bg-canvas/60 p-4">
               <p className="text-xs uppercase tracking-[0.2em] text-ink/50">Filters</p>
               <p className="mt-2 text-sm text-ink/70">
                 Size, gender, max price, and price sorting shape the final matches.
@@ -298,7 +297,7 @@ export function UploadWorkbench() {
 
           <div className="mt-6 grid gap-4 md:grid-cols-2 xl:grid-cols-4">
             {analysis.items.map((item) => (
-              <div key={item.id} className="rounded-[24px] border border-ink/10 bg-white/70 p-5">
+              <div key={item.id} className="rounded-[24px] border border-ink/10 bg-canvas/60 p-5">
                 <div className="text-xs uppercase tracking-[0.2em] text-ink/45">{item.itemType}</div>
                 <p className="mt-2 text-lg font-semibold text-ink">
                   {[item.color, item.brand].filter(Boolean).join(" • ") || "Unbranded signal"}

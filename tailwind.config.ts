@@ -9,19 +9,21 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        canvas: "#f5efe6",
-        ink: "#171413",
-        accent: "#bf5b38",
-        moss: "#5a6c57",
-        paper: "#fffaf2",
-        fog: "#ddd2c3"
+        canvas: "#F2F0E9", // Cream
+        ink: "#1A1A1A", // Charcoal
+        accent: "#CC5833", // Clay
+        moss: "#2E4036", // Moss
+        paper: "#FAF9F5", 
+        fog: "#E8E5DF"
       },
       fontFamily: {
-        display: ["Georgia", "serif"],
-        body: ["'Trebuchet MS'", "sans-serif"]
+        display: ['"Cormorant Garamond"', "serif"], // Drama
+        body: ['"Plus Jakarta Sans"', "sans-serif"], // Normal
+        heading: ['"Outfit"', "sans-serif"], // Headings
+        mono: ['"IBM Plex Mono"', "monospace"], // Data
       },
       boxShadow: {
-        card: "0 24px 80px rgba(23, 20, 19, 0.12)"
+        card: "0 24px 80px rgba(0, 0, 0, 0.08)"
       }
     }
   },
